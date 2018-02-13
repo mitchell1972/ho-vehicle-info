@@ -1,8 +1,10 @@
 package Pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
+
+import java.io.File;
+import java.io.IOException;
 
 public class ConfirmVehiclePage {
 
@@ -21,5 +23,14 @@ public class ConfirmVehiclePage {
     public static WebElement continueButton(WebDriver e,String className) {
         element = e.findElement(By.className(className));
         return element;
+    }
+
+    public static void captureScreen(WebDriver e){
+        File scrFile = ((TakesScreenshot)e).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(scrFile, new File("screenshot.png"));
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 }

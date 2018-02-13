@@ -61,7 +61,7 @@ public class VehicleCheck {
 
         //Validate new location
         LandingPage.confirmUrl(e, "https://vehicleenquiry.service.gov.uk/ViewVehicle");
-
+        ConfirmVehiclePage.captureScreen(e);
 
     }
 }
