@@ -12,6 +12,10 @@ public class ReadFilePath {
     static String fileExtension;
     static String end ="Illegal File Type";
     public static List<String> regNumber=new ArrayList<>();
+    public static List<String> makeOfVehicle=new ArrayList<>();
+    public static List<String> colourOfVehicle=new ArrayList<>();
+
+
 
     public static String nameOfFile(String filePath) {
         File file = new File(filePath);
@@ -102,10 +106,13 @@ public class ReadFilePath {
                         String[] vehicleDetails = fileLine.split(",");
 
                         regNumber.add(vehicleDetails[2]);
+                        makeOfVehicle.add(vehicleDetails[0]);
+                        colourOfVehicle.add(vehicleDetails[1]);
 
 
                 }
             }
+            else System.out.println("Invalid File Type");
         }
 
         catch(Exception ex){
